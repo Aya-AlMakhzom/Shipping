@@ -1,0 +1,2 @@
+C:/Users/DELL/Documents/GitHub/Shipping/android/app/.cxx/Debug/93l146w6/x86/CMakeFiles/edit_cache.dir
+C:/Users/DELL/Documents/GitHub/Shipping/android/app/.cxx/Debug/93l146w6/x86/CMakeFiles/rebuild_cache.dir

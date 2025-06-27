@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:testt/model/UserModel.dart';
 
 class ApiService {
-  static const String baseUrl = "http://10.0.2.2:8000";
+  static const String baseUrl = "http://127.0.0.1:58154/api/auth";
   static String? token;
 
 
@@ -20,7 +20,7 @@ class ApiService {
 
 
   static Future<Map<String, dynamic>> register(Map<String, String> body) async {
-    final uri = Uri.parse("$baseUrl/api/auth/register");
+    final uri = Uri.parse("$baseUrl/register");
     var request = http.MultipartRequest('POST', uri);
     request.headers.addAll(_headers());
 
@@ -55,7 +55,7 @@ class ApiService {
     if (parsedId == -1) {
       throw Exception("معرّف المستخدم غير صالح");
     }
-    final uri = Uri.parse("$baseUrl/api/auth/verifyAuthCode/${user.id}");
+    final uri = Uri.parse("$baseUrl/verifyAuthCode/${user.id}");
     var request = http.MultipartRequest('POST', uri);
     request.headers.addAll(_headers());
     request.fields['code'] = code;
@@ -81,7 +81,7 @@ class ApiService {
     required String email,
     required String password,
   }) async {
-    final uri = Uri.parse("$baseUrl/api/auth/login");
+    final uri = Uri.parse("$baseUrl/login");
 
     print("[LOGIN] POST $uri");
     print(" Body: email=$email, password=$password");
@@ -103,7 +103,7 @@ class ApiService {
 
 
   static Future<Map<String, dynamic>> forgetPassword(String email) async {
-    final uri = Uri.parse("$baseUrl/api/auth/forgetPassword");
+    final uri = Uri.parse("$baseUrl/forgetPassword");
 
     print(" [FORGET PASSWORD] POST $uri");
     print(" Body: email=$email");
@@ -125,7 +125,7 @@ class ApiService {
     required UserModel user,
     required String code,
   }) async {
-    final uri = Uri.parse("$baseUrl/api/auth/verifyPasswordCode/${user.id}");
+    final uri = Uri.parse("$baseUrl/verifyPasswordCode/${user.id}");
 
     print(" [VERIFY PASSWORD CODE] POST $uri");
     print(" Body: code=$code");
@@ -148,7 +148,7 @@ class ApiService {
     required String password,
     required String confirmPassword,
   }) async {
-    final uri = Uri.parse("$baseUrl/api/auth/resetPassword/$userId");
+    final uri = Uri.parse("$baseUrl/resetPassword/$userId");
 
     print(" [RESET PASSWORD] POST $uri");
     print(" Body: password=$password, confirm=$confirmPassword");
@@ -170,7 +170,7 @@ class ApiService {
 
 
   static Future<Map<String, dynamic>> refreshCode(int ?userId) async {
-    final uri = Uri.parse("$baseUrl/api/auth/refreshCode/$userId");
+    final uri = Uri.parse("$baseUrl/refreshCode/$userId");
 
     print("[REFRESH CODE] GET $uri");
 
@@ -184,7 +184,7 @@ class ApiService {
 
 
   static Future<Map<String, dynamic>> logout() async {
-    final uri = Uri.parse("$baseUrl/api/auth/logout");
+    final uri = Uri.parse("$baseUrl/logout");
 
     print("[LOGOUT] GET $uri");
 

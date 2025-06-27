@@ -35,7 +35,7 @@ class ForgetPasswordView extends StatelessWidget {
             child: Column(
               children: [
                 const Text(
-                  "أدخل بريدك الإلكتروني لإرسال رمز التحقق",
+                  " أدخل بريدك الإلكتروني لإرسال رمز التحقق",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18,

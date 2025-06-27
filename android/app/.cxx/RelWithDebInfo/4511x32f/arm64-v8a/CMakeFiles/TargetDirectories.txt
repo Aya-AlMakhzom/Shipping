@@ -1,0 +1,2 @@
+C:/Users/DELL/Documents/GitHub/Shipping/android/app/.cxx/RelWithDebInfo/4511x32f/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/DELL/Documents/GitHub/Shipping/android/app/.cxx/RelWithDebInfo/4511x32f/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:testt/controller/reset_password_controller.dart';
 import 'package:testt/model/UserModel.dart';
 import '../api_service.dart.dart';
-import '../home_page.dart';
+import '../view/home_page.dart';
 import '../view/reset_password_view.dart';
 
 class VerifyCodeController extends GetxController {

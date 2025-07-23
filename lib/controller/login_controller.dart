@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testt/model/UserModel.dart';
 import '../api_service.dart.dart';
-import '../home_page.dart';
+import '../view/home_page.dart';
+
 
 
 class LoginController extends GetxController {
@@ -35,7 +36,10 @@ class LoginController extends GetxController {
       UserModel user =UserModel.fromJson(response['data']['user']);
       user.setTOKEN(response['data']['token']);
       user.setIsVerified(true);
-      Get.offAll(() => const HomePage());
+      ApiService.token = response['data']['token'];
+      Future.delayed(Duration(milliseconds: 100), () {
+        Get.offAll(() => const HomePage());
+      });
     } else {
       Get.snackbar(
         "خطأ",
